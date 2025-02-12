@@ -1,5 +1,3 @@
-A = [-2 7 1; -4 5 1; 4 -3 1];
-b = [-53; -41; -25];
 Aug = [A, b];
 [n, m] =  size(Aug);
 % Gaussian Elimination
