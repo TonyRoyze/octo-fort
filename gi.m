@@ -1,5 +1,5 @@
 rankA = rank(A);
-%detA = det(A);
+detA = det(A);
 
 C = [A(1:2, 1:2)];
 %rankC = rank(C);
