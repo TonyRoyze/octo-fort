@@ -1,4 +1,4 @@
-Aug = [A, b];
+Aug = [A, b]
 [n, m] =  size(Aug);
 % Gaussian Elimination
 for j = 1:m-2
