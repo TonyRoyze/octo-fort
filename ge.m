@@ -1,6 +1,7 @@
+%ge
 Aug = [A, b]
 [n, m] =  size(Aug);
-% Gaussian Elimination
+
 for j = 1:m-2
     if Aug(j,j) = 0
         swapRow = find(Aug(j+1:n, j) ~= 0, 1) + j;
