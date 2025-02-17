@@ -1,3 +1,4 @@
+%ls
 w = 'FF[+FF][-FF]FF[+F][-F]F';
 lenw = length(w);
 
