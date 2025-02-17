@@ -1,3 +1,4 @@
+%spp
 Aug = [A, b];
 
 [n, m] = size(Aug);
