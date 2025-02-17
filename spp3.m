@@ -1,4 +1,4 @@
-%--------------GE -----------
+%spp3
 A=[pi -e sqrt(2) -sqrt(3) sqrt(11);
 pi^2 e -e^2 3/7 0;sqrt(5) -sqrt(6) 1 -sqrt(2) pi;
 pi^3 e^2 -sqrt(7) 1/9 sqrt(2)];
