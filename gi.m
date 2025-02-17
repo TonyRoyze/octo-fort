@@ -1,3 +1,4 @@
+%gi
 rankA = rank(A);
 detA = det(A);
 
