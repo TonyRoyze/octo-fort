@@ -1,3 +1,4 @@
+%pi
 rankA = rank(A);
 A_dag = inv(transpose(A)*A)*transpose(A);
 
