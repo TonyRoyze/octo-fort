@@ -1,34 +1,35 @@
 %spp
-Aug = [A, b];
+Aug = [A, b]
 
-[n, m] = size(Aug);
-
+[nRows, nCols] = size(Aug);
 S = max(abs(Aug(:,1:end-1)), [], 2);
 
-for j = 1:m-2
+
+for j = 1:nCols-2
     m = abs(Aug(:,j))./S;
-    [~, rel_index] = max(m(j:n));
-    rel_index = rel_index + j - 1;
-    
-    fprintf('Swapping row %i with %i.\n', j, rel_index);
-    Aug([j, rel_index], :) = Aug([rel_index, j], :);
-    
-    for i = j+1:n
-        if Aug(i, j) ~= 0
-            r = Aug(i, j) / Aug(j, j);
-            Aug(i, :) = Aug(i, :) - r * Aug(j, :)
+    [maximum, rel_index] = max(abs(m(j:nRows)));
+    fprintf('Maximum of column %i is %i.\n', j , maximum);
+    if j ~= rel_index+j-1
+        fprintf('Swapping row %i with %i.\n', j, rel_index+j-1);
+        Aug([j, rel_index+j-1], :) = Aug([rel_index+j-1, j], :);
+    end
+
+    for i = j+1:nRows
+        if Aug(i, j) ~= 0 
+            r = Aug(i, j) / Aug(j, j); 
+            Aug(i, :) -= r * Aug(j, :);
         end
     end 
 end
 
-x = zeros(n,1);
-x(n) = Aug(n,m)/Aug(n,n);
+U = Aug(:, 1:end-1);
+b = Aug(:, end);
 
-for i = n-1:-1:1
-    if Aug(i,i) = 0
-        disp('Matrix is singular');
-    end
-    x(i) = (Aug(i,m) - Aug(i, i+1:end)*x(i+1:end))/Aug(i,i);
+x = zeros(nRows, 1);
+
+for i = nRows:-1:1
+    x(i) = (b(i) - U(i, i+1:end) * x(i+1:end)) / U(i, i);
 end
+
 fprintf('The solution vector is:\n');
-x
+disp(x);
