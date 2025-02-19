@@ -1,4 +1,4 @@
-%sier
+%seir
 a = 0.006; % Recovery rate
 e = 0.1;   % Transition rate 
 b = 0.75;  % Transmission rate
