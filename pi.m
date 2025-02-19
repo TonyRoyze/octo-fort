@@ -17,8 +17,8 @@ DTD_eig = eig(transpose(D)*D);
 %disp("ABA compared to B:");
 %disp(norm(ABA - B, 'fro')); % Check if difference is near 0
 
-(* Properties
-- $U$ and $V$ are unitary matrices since $UU^T = I$
-- Diagonal elements of the diagonal matrix $\Sigma$ are the singular values of the matrix
-- The sqaure roots of the eigand values of the matrix $AA^T$ are the singular values of the matrix
-- Spectral Norm `norm(A, 2)` is the maximum of the singular values *)
+%Properties
+%- $U$ and $V$ are unitary matrices since $UU^T = I$
+%- Diagonal elements of the diagonal matrix $\Sigma$ are the singular values of the matrix
+%- The sqaure roots of the eigand values of the matrix $AA^T$ are the singular values of the matrix
+%- Spectral Norm `norm(A, 2)` is the maximum of the singular values
