@@ -13,6 +13,10 @@ D = [2 -2 1; -4 -8 -8];
 CTC_eig = eig(transpose(C)*C);
 DTD_eig = eig(transpose(D)*D);
 
+% Verify generalized inverse property
+%disp("ABA compared to B:");
+%disp(norm(ABA - B, 'fro')); % Check if difference is near 0
+
 (* Properties
 - $U$ and $V$ are unitary matrices since $UU^T = I$
 - Diagonal elements of the diagonal matrix $\Sigma$ are the singular values of the matrix
