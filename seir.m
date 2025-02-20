@@ -1,4 +1,3 @@
-%seir
 a = 0.006; % Recovery rate
 e = 0.1;   % Transition rate 
 b = 0.75;  % Transmission rate
@@ -20,21 +19,11 @@ seir_eqn = @(t, x, u) [
     a * x(3)                           
 ];
 
-
-u = [0.8, 0.6, 0.5, 0.4, 0.2];
-colors = ['r', 'g', 'b', 'm', 'k']; 
+[t, solution] = ode45(@(t, x, u) seir_eqn(t, x, 0.8), tspan, x0);
+plot(t, solution(:, 3), 'r-');
 hold on;
-
-
-for i = 1:length(u)
-    u_i = u(i);
-    [t, solution] = ode45(@(t, x) seir_eqn(t, x, u_i), tspan, x0);
-    plot(t, solution(:, 3), colors(i));
-end
-
-
-hold off;
 xlabel('Time');
 ylabel('Infected Population');
 legend('0.8', '0.6', '0.5', '0.4', '0.2')
 grid on;
+hold off;
