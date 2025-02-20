@@ -1,7 +1,7 @@
-function X = jacobi(A,B,P,max1)
+function X = jacobi(A,B,P,max)
     N = length(B);
     X = zeros(1,N);
-    for k = 1: max1
+    for k = 1: max
         for j =1:N
             X(j) = (B(j) - A(j,[1:j-1,j+1:N])*P([1:j-1,j+1:N]))/A(j,j);
         endfor
