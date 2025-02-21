@@ -19,11 +19,11 @@ seir_eqn = @(t, x, u) [
     a * x(3)                           
 ];
 
-[t, solution] = ode45(@(t, x, u) seir_eqn(t, x, 0.8), tspan, x0);
-plot(t, solution(:, 3), 'r-');
+[t, solution] = ode45(seir_eqn, tspan, x0, 0.8);
+plot(t,solution(:, 1), "-g" ,t,solution(:, 2), "-r" , t,solution(:, 3), "-b", t,solution(:, 3), "-k" );
 hold on;
 xlabel('Time');
 ylabel('Infected Population');
-legend('0.8', '0.6', '0.5', '0.4', '0.2')
+legend('S', 'E', 'I', 'R')
 grid on;
 hold off;
