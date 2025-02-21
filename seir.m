@@ -20,7 +20,7 @@ seir_eqn = @(t, x, u) [
 ];
 
 [t, solution] = ode45(seir_eqn, tspan, x0, 0.8);
-plot(t,solution(:, 1), "-g" ,t,solution(:, 2), "-r" , t,solution(:, 3), "-b", t,solution(:, 3), "-k" );
+plot(t,solution(:, 1), "-g" ,t,solution(:, 2), "-r" , t,solution(:, 3), "-b", t,solution(:, 4), "-k" );
 hold on;
 xlabel('Time');
 ylabel('Infected Population');
